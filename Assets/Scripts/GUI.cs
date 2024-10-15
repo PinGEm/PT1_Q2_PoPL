@@ -42,7 +42,7 @@ public class ImpGUI : MonoBehaviour
         if (GUI.Button(new Rect(220, 180, 100, 100), "Player 1 Stats"))
         {
             print("p1");
-            labelText = "Name: Freddy Fazbear\n\rAttack: " + Player_1_Attack + "\n\rDefense: " + Player_1_Defense + "\n\rSpeed: " + Player_1_Speed + "\n\rLuck: 30" + Player_1_Luck + "\n\rIntelligence: " + +Player_1_Intelligence;
+            labelText = "Name: Freddy Fazbear\n\rAttack: " + Player_1_Attack + "\n\rDefense: " + Player_1_Defense + "\n\rSpeed: " + Player_1_Speed + "\n\rLuck: 30" + Player_1_Luck + "\n\rIntelligence: " + Player_1_Intelligence;
         }
 
         if (GUI.Button(new Rect(220, 330, 100, 100), "Player 2 Stats"))
