@@ -5,60 +5,80 @@ using UnityEngine.UIElements;
 
 public class ImpGUI : MonoBehaviour
 {
-    public string labelText;
-    private GUIStyle labelStyle;
-    // Player 1 Stats
-    private int Player_1_Attack = 300;
-    private int Player_1_Defense = 100;
-    private int Player_1_Speed = 50;
-    private int Player_1_Luck = 30;
-    private int Player_1_Intelligence = 10;
-    private int Player_1_Special = 15;
-    // Player 2 Stats
-    private int Player_2_Attack = 99999;
-    private int Player_2_Defense = 3333;
-    private int Player_2_Speed = 44444;
-    private int Player_2_Luck = 555;
-    private int Player_2_Intelligence = 55;
-    private int Player_2_Special = 1;
-    // Player 3 Stats
-    private int Player_3_Attack = 1000;
-    private int Player_3_Defense = 20;
-    private int Player_3_Speed = 30;
-    private int Player_3_Luck = 10;
-    private int Player_3_Intelligence = 10;
-    private int Player_3_Special = 20;
+    private string textFieldString = "input text";
+    /*    public string labelText;
+        private GUIStyle labelStyle;
+        // Player 1 Stats
+        private int Player_1_Attack = 300;
+        private int Player_1_Defense = 100;
+        private int Player_1_Speed = 50;
+        private int Player_1_Luck = 30;
+        private int Player_1_Intelligence = 10;
+        private int Player_1_Special = 15;
+        // Player 2 Stats
+        private int Player_2_Attack = 99999;
+        private int Player_2_Defense = 3333;
+        private int Player_2_Speed = 44444;
+        private int Player_2_Luck = 555;
+        private int Player_2_Intelligence = 55;
+        private int Player_2_Special = 1;
+        // Player 3 Stats
+        private int Player_3_Attack = 1000;
+        private int Player_3_Defense = 20;
+        private int Player_3_Speed = 30;
+        private int Player_3_Luck = 10;
+        private int Player_3_Intelligence = 10;
+        private int Player_3_Special = 20;*/
 
-    private void Start()
-    {
-        // Font Size & Color
-        labelStyle = new GUIStyle();
-        labelStyle.fontSize = 20;
-        labelStyle.normal.textColor = Color.white;
-    }
+    /*    private void Start()
+        {
+            // Font Size & Color
+            labelStyle = new GUIStyle();
+            labelStyle.fontSize = 20;
+            labelStyle.normal.textColor = Color.white;
+        }*/
+    private bool toggleBool = true;
 
     private void OnGUI()
     {
-        GUI.Box(new Rect(150, 65, 1200, 600), "Player Stats");
+        textFieldString = GUI.TextField(new Rect(25, 20, 100, 100), textFieldString);
 
-        if (GUI.Button(new Rect(220, 180, 100, 100), "Player 1 Stats"))
+        if (GUI.Button(new Rect(25, 200, 150, 150), "yipeee"))
         {
-            print("p1");
-            labelText = "Name: Freddy Fazbear\n\rAttack: " + Player_1_Attack + "\n\rDefense: " + Player_1_Defense + "\n\rSpeed: " + Player_1_Speed + "\n\rLuck: 30" + Player_1_Luck + "\n\rIntelligence: " + Player_1_Intelligence + "\n\rSpecial: " + Player_1_Special;
+            Debug.Log(textFieldString);
         }
 
-        if (GUI.Button(new Rect(220, 330, 100, 100), "Player 2 Stats"))
+        toggleBool = GUI.Toggle(new Rect(250, 20, 100, 30), toggleBool, "Toggle");
+        if (toggleBool)
         {
-            print("p2");
-            labelText = "Name: Marcud\n\rAttack: " + Player_2_Attack + "\n\rDefense: " + Player_2_Defense + "\n\rSpeed: " + Player_2_Speed + "\n\rLuck: " + Player_2_Luck + "\n\rIntelligence: " + Player_2_Intelligence + "\n\rSpecial: " + Player_2_Special;
+            print("it is true!");
+        }
+        else
+        {
+            print("it is false");
         }
 
-        if (GUI.Button(new Rect(220, 480, 100, 100), "Player 3 Stats"))
-        {
-            print("p3");
-            labelText = "Name: Taylor Swift\n\rAttack: " + Player_3_Attack + "\n\rDefense: " + Player_3_Defense + "\n\rSpeed: " + Player_3_Speed + "\n\rLuck: " + Player_3_Luck + "\n\rIntelligence: " + Player_3_Intelligence + "\n\rSpecial: " + Player_3_Special;
-        }
+        /*   Old PT1
+                GUI.Box(new Rect(150, 65, 1200, 600), "Player Stats");
 
-        GUI.Label(new Rect(800, 300, 200, 200), labelText, labelStyle);
+                if (GUI.Button(new Rect(220, 180, 100, 100), "Player 1 Stats"))
+                {
+                    print("p1");
+                    labelText = "Name: Freddy Fazbear\n\rAttack: " + Player_1_Attack + "\n\rDefense: " + Player_1_Defense + "\n\rSpeed: " + Player_1_Speed + "\n\rLuck: 30" + Player_1_Luck + "\n\rIntelligence: " + Player_1_Intelligence + "\n\rSpecial: " + Player_1_Special;
+                }
+
+                if (GUI.Button(new Rect(220, 330, 100, 100), "Player 2 Stats"))
+                {
+                    print("p2");
+                    labelText = "Name: Marcud\n\rAttack: " + Player_2_Attack + "\n\rDefense: " + Player_2_Defense + "\n\rSpeed: " + Player_2_Speed + "\n\rLuck: " + Player_2_Luck + "\n\rIntelligence: " + Player_2_Intelligence + "\n\rSpecial: " + Player_2_Special;
+                }
+
+                if (GUI.Button(new Rect(220, 480, 100, 100), "Player 3 Stats"))
+                {
+                    print("p3");
+                    labelText = "Name: Taylor Swift\n\rAttack: " + Player_3_Attack + "\n\rDefense: " + Player_3_Defense + "\n\rSpeed: " + Player_3_Speed + "\n\rLuck: " + Player_3_Luck + "\n\rIntelligence: " + Player_3_Intelligence + "\n\rSpecial: " + Player_3_Special;
+                }
+
+                GUI.Label(new Rect(800, 300, 200, 200), labelText, labelStyle);*/
     }
 }
